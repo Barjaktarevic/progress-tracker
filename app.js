@@ -95,8 +95,41 @@ saveButton.addEventListener('click', function() {
 
 })
 
+/* DARK AND LIGHT MODE CODE */
+
+let lightButton = document.querySelector('.light-button')
+let darkButton = document.querySelector('.dark-button')
+let navbar = document.querySelector('.navbar')
+let mainSection = document.querySelector('.main-section')
+lightButton.addEventListener('click', function() {
+  lightButton.style.display = "none"
+  darkButton.style.display = "block"
+  navbar.style.backgroundColor = '#333333'
+  navbar.style.color = 'white'
+  navbar.style.borderBottom = 'white solid 3px'
+  saveButton.style.backgroundColor = "white"
+  saveButton.style.color = "#333333"
+  loadButton.style.backgroundColor = "white"
+  loadButton.style.color = "#333333"
+  mainSection.style.backgroundColor = "#333333"
+  mainSection.style.color = "white"
+
+})
+darkButton.addEventListener('click', function() {
+  darkButton.style.display = "none"
+  lightButton.style.display = "block"
+  navbar.style.backgroundColor = 'white'
+  navbar.style.color = '#333333'
+  navbar.style.borderBottom = 'grey solid 3px'
+  saveButton.style.backgroundColor = "rgb(91, 89, 89)"
+  saveButton.style.color = "white"
+  loadButton.style.backgroundColor = "rgb(91, 89, 89)"
+  loadButton.style.color = "white"
+  mainSection.style.backgroundColor = "rgb(228, 228, 228)"
+  mainSection.style.color = "black"
+})
 
 
-
-
+/* END OF DARK AND LIGHT MODE CODE || have to still change individual colors for new
+divs depending on which mode is active ... */
 
