@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Progress Tracker</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/6c43641683.js" crossorigin="anonymous"></script>
+    <script defer src="app.js"></script>
+</head>
+<body>
+    <nav class="navbar">
+        <p class="app-title">Progress Tracker</p>
+        <button class="load-button"><i class="fa-solid fa-download"></i>Load progress</button>
+        <button class="save-button"><i class="fa-solid fa-floppy-disk"></i> Save changes</button>
+        <button class="login-button">Log in</button>
+    </nav>
+    <main class="main-section">
+        <button class="add-button"><i class="fa-solid fa-square-plus"></i>Add progress</button>
+        <dialog class="modal">
+            <button class="close-button"><i class="fa-regular fa-rectangle-xmark"></i></button>
+            <form class="dialog-form" method="dialog">
+            <h1 class="modal-title">Add coding progress</h1>
+            <input type="text" class="area-info" placeholder="Area (e.g. CSS, JS...)" required>
+            <input type="date" class="date-info" placeholder="Date" required>
+            <textarea class="progress-description" placeholder="Describe what you've learned" required></textarea>
+            <button class="submit-button">Submit</button>
+            </form>
+        </dialog>
+        <section class="new-div-section"></section>
+    </main>
+    <footer class="footer">Copyright 2022<i class="fa-solid fa-copyright"></i><a href="https://github.com/Barjaktarevic" target="_blank">Barjaktarevic<i class="fa-brands fa-github"></i></a>
+    </footer> 
+    
+
+    
+</body>
+</html>
