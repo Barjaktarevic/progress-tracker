@@ -28,7 +28,13 @@ modalForm.addEventListener('submit', function() {
     let newDescription = document.createElement('p')
     let newButton = document.createElement('button')
     let newDiv = document.createElement('div')
-    newDiv.classList.add('new-div')
+
+    if (lightButton.style.display === "none") {
+      newDiv.classList.add('new-div-dark')
+    } else {
+      newDiv.classList.add('new-div')
+    }
+
     newDate.innerText = dateInput.value
     newArea.innerText = areaInput.value
     newDescription.innerText = textInput.value
@@ -71,7 +77,11 @@ loadButton.addEventListener('click', function() {
     newButton.innerText = "Remove entry"
     newButtons.push(newButton)
     newDiv.innerHTML = parsedData[i]
-    newDiv.classList.add('new-div')
+    if (lightButton.style.display === "none") {
+      newDiv.classList.add('new-div-dark')
+    } else {
+      newDiv.classList.add('new-div')
+    }
     divSection.appendChild(newDiv)
     newDivData.push(newDiv.innerHTML)
     newDiv.appendChild(newButton)
@@ -113,7 +123,13 @@ lightButton.addEventListener('click', function() {
   loadButton.style.color = "#333333"
   mainSection.style.backgroundColor = "#333333"
   mainSection.style.color = "white"
-
+ 
+  let mainDivs = divSection.getElementsByTagName('div')
+  for (let i = 0; i < mainDivs.length; i++) {
+  mainDivs[i].classList.remove('new-div')
+  mainDivs[i].classList.add('new-div-dark')
+  }
+  
 })
 darkButton.addEventListener('click', function() {
   darkButton.style.display = "none"
@@ -127,6 +143,12 @@ darkButton.addEventListener('click', function() {
   loadButton.style.color = "white"
   mainSection.style.backgroundColor = "rgb(228, 228, 228)"
   mainSection.style.color = "black"
+  
+  let mainDivs = divSection.getElementsByTagName('div')
+  for (let i = 0; i < mainDivs.length; i++) {
+  mainDivs[i].classList.add('new-div')
+  mainDivs[i].classList.remove('new-div-dark')
+  }
 })
 
 
