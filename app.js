@@ -151,7 +151,6 @@ darkButton.addEventListener('click', function() {
   }
 })
 
+/* END OF DARK AND LIGHT MODE CODE */
 
-/* END OF DARK AND LIGHT MODE CODE || have to still change individual colors for new
-divs depending on which mode is active ... */
 
