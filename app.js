@@ -111,6 +111,8 @@ let lightButton = document.querySelector('.light-button')
 let darkButton = document.querySelector('.dark-button')
 let navbar = document.querySelector('.navbar')
 let mainSection = document.querySelector('.main-section')
+let footer = document.querySelector('.footer')
+
 lightButton.addEventListener('click', function() {
   lightButton.style.display = "none"
   darkButton.style.display = "block"
@@ -123,6 +125,7 @@ lightButton.addEventListener('click', function() {
   loadButton.style.color = "#333333"
   mainSection.style.backgroundColor = "#333333"
   mainSection.style.color = "white"
+  footer.style.borderImageSource = "linear-gradient(to right, transparent 0%, #96031a 50%, transparent 100%)"
  
   let mainDivs = divSection.getElementsByTagName('div')
   for (let i = 0; i < mainDivs.length; i++) {
@@ -143,6 +146,8 @@ darkButton.addEventListener('click', function() {
   loadButton.style.color = "white"
   mainSection.style.backgroundColor = "rgb(228, 228, 228)"
   mainSection.style.color = "black"
+  footer.style.borderImageSource = "linear-gradient(to right, transparent 0%, black 50%, transparent 100%)"
+
   
   let mainDivs = divSection.getElementsByTagName('div')
   for (let i = 0; i < mainDivs.length; i++) {
