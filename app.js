@@ -58,7 +58,10 @@ modalForm.addEventListener('submit', function() {
 document.body.addEventListener('click', function (element) {
     for (let i = 0; i < newButtons.length; i++) {
       if(element.target === newButtons[i] ) {
+      element.target.parentNode.classList.add('fade-out')
+      setTimeout(() => {
       element.target.parentNode.remove()
+    }, 535)
       newButtons.splice(i, 1)
       newDivArray.splice(i, 1)
       newDivData.splice(i, 1)
@@ -66,6 +69,7 @@ document.body.addEventListener('click', function (element) {
     };
   } );
 
+ 
 
 const loadButton = document.querySelector('.load-button')
 if (localStorage.getItem('data')) {

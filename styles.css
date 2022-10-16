@@ -219,6 +219,8 @@ start of JS styling
     gap: 1vh;;
     text-align: center;
     margin-top: 0.7%;
+    animation: fade-in 0.75s;
+    animation-iteration-count: 1;
 }
 
 .new-div button {
@@ -245,6 +247,8 @@ start of JS styling
     gap: 1vh;;
     text-align: center;
     margin-top: 0.7%;
+    animation: fade-in-dark 0.75s;
+    animation-iteration-count: 1;
 }
 
 .new-div-dark button {
@@ -260,6 +264,55 @@ start of JS styling
 .new-div-dark button:hover {
     cursor: pointer;
     opacity: 0.75;
+}
+
+@keyframes fade-in {
+    0% {
+        opacity: 0
+    }
+    33% {
+        opacity: 0.33
+    }
+    66% {
+
+        opacity: 0.66
+    }
+    100% {
+        opacity: 1
+    }
+}
+
+@keyframes fade-in-dark {
+    0% {
+        opacity: 0
+    }
+    33% {
+        opacity: 0.33
+    }
+    66% {
+
+        opacity: 0.66
+    }
+    100% {
+        opacity: 1
+    }
+}
+
+.fade-out {
+    animation: fade-out 0.55s;
+    animation-iteration-count: 1;
+}
+
+@keyframes fade-out {
+    0% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.5;
+    }
+    100% {
+        opacity: 0;
+    }
 }
 
 /* ===================================
