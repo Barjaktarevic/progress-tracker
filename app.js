@@ -1,3 +1,5 @@
+/* SELECTION OF ELEMENTS IN THE DOM */
+
 const modal = document.querySelector('.modal')
 const modalForm = document.querySelector('.dialog-form')
 const addButton = document.querySelector('.add-button')
@@ -6,6 +8,13 @@ const divSection = document.querySelector('.new-div-section')
 const areaInput = document.querySelector('.area-info')
 const dateInput = document.querySelector('.date-info')
 const textInput = document.querySelector('.progress-description')
+let lightButton = document.querySelector('.light-button')
+let darkButton = document.querySelector('.dark-button')
+let navbar = document.querySelector('.navbar')
+let mainSection = document.querySelector('.main-section')
+let footer = document.querySelector('.footer')
+
+/* SELECTION OF ELEMENTS IN THE DOM END */
 
 addButton.addEventListener('click', function() {
     modal.showModal()
@@ -111,25 +120,20 @@ saveButton.addEventListener('click', function() {
 
 /* DARK AND LIGHT MODE CODE */
 
-let lightButton = document.querySelector('.light-button')
-let darkButton = document.querySelector('.dark-button')
-let navbar = document.querySelector('.navbar')
-let mainSection = document.querySelector('.main-section')
-let footer = document.querySelector('.footer')
-
 lightButton.addEventListener('click', function() {
   lightButton.style.display = "none"
   darkButton.style.display = "block"
-  navbar.style.backgroundColor = '#333333'
+  navbar.style.backgroundColor = 'var(--dark-mode-background)'
   navbar.style.color = 'white'
   navbar.style.borderBottom = 'white solid 3px'
   saveButton.style.backgroundColor = "white"
-  saveButton.style.color = "#333333"
+  saveButton.style.color = "var(--dark-mode-background)"
   loadButton.style.backgroundColor = "white"
-  loadButton.style.color = "#333333"
-  mainSection.style.backgroundColor = "#333333"
+  loadButton.style.color = "var(--dark-mode-background)"
+  mainSection.style.backgroundColor = "var(--dark-mode-background)"
   mainSection.style.color = "white"
-  footer.style.borderImageSource = "linear-gradient(to right, transparent 0%, #96031a 50%, transparent 100%)"
+  addButton.style.boxShadow = "5px 10px 5px 0px var(--dark-mode-shadow)"
+  footer.style.borderImageSource = "linear-gradient(to right, transparent 0%, var(--dark-mode-red) 50%, transparent 100%)"
  
   let mainDivs = divSection.getElementsByTagName('div')
   for (let i = 0; i < mainDivs.length; i++) {
@@ -142,15 +146,16 @@ darkButton.addEventListener('click', function() {
   darkButton.style.display = "none"
   lightButton.style.display = "block"
   navbar.style.backgroundColor = 'white'
-  navbar.style.color = '#333333'
-  navbar.style.borderBottom = 'grey solid 3px'
-  saveButton.style.backgroundColor = "rgb(91, 89, 89)"
+  navbar.style.color = 'var(--dark-mode-background)'
+  navbar.style.borderBottom = 'var(--light-mode-shadow) solid 3px'
+  saveButton.style.backgroundColor = "var(--light-mode-dim)"
   saveButton.style.color = "white"
-  loadButton.style.backgroundColor = "rgb(91, 89, 89)"
+  loadButton.style.backgroundColor = "var(--light-mode-dim)"
   loadButton.style.color = "white"
-  mainSection.style.backgroundColor = "rgb(228, 228, 228)"
+  mainSection.style.backgroundColor = "var(--light-mode-background) "
   mainSection.style.color = "black"
   footer.style.borderImageSource = "linear-gradient(to right, transparent 0%, black 50%, transparent 100%)"
+  addButton.style.boxShadow = "5px 10px 5px 0px var(--light-mode-shadow)"
 
   
   let mainDivs = divSection.getElementsByTagName('div')

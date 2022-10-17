@@ -8,6 +8,15 @@ html {
     font-family: 'Roboto Condensed', sans-serif;
 }
 
+:root {
+    --light-mode-dim: rgb(91, 89, 89); ;
+    --light-mode-background: rgb(228, 228, 228);
+    --light-mode-shadow: rgb(125, 124, 124) ;
+    --dark-mode-background: rgb(51, 51, 51);
+    --dark-mode-red: rgb(150, 3, 26);
+    --dark-mode-shadow: rgb(71, 0, 11);
+}
+
 /* ===================================
  start of navbar styling
 ====================================== */
@@ -28,7 +37,7 @@ html {
     border: none;
     height: 75%;
     margin-top: 0.52%;
-    background-color: rgb(91, 89, 89);
+    background-color: var(--light-mode-dim);
     color: white;
     padding: 0 10px;
     border-radius: 20px;
@@ -72,7 +81,7 @@ html {
     border: none;
     height: 75%;
     margin-top: 0.52%;
-    background-color: rgb(91, 89, 89);
+    background-color: var(--light-mode-dim);
     color: white;
     padding: 0 10px;
     border-radius: 2px;
@@ -97,8 +106,9 @@ start of main styling
     margin: 0 auto;
     margin-top: 3.5%;
     border: none;
-    background-color:rgb(228, 228, 228);    
+    background-color:var(--light-mode-background);    
     border-radius: 15px;
+    box-shadow: 5px 10px 5px 0px var(--light-mode-shadow);
 }
 
 .fa-solid {
@@ -109,15 +119,15 @@ start of main styling
     cursor: pointer;
     opacity: 0.7;
     background-color:white;
-    box-shadow: 0 10px 5px 0px grey;
+    box-shadow: 5px 10px 5px 0px var(--light-mode-shadow);
 }
 
 .main-section {
-    background-color:rgb(228, 228, 228);
+    background-color: var(--light-mode-background);
     padding-top: 1%;
     margin-left: 2em;
     margin-right: 2em;
-    min-height: 100vh;
+    min-height: 86.2vh;
 }
 /* ===================================
 end of main styling
@@ -135,11 +145,7 @@ top: 50%;
 transform: translate(-50%, -50%);
 width: 25%;
 border-radius: 2%;
-box-shadow: 0 8px 0 0px rgb(125, 124, 124);
-}
-
-.modal::backdrop {
-    opacity: 0.5;
+box-shadow: 0 8px 0 0px var(--light-mode-shadow);
 }
 
 .dialog-form {
@@ -166,7 +172,7 @@ box-shadow: 0 8px 0 0px rgb(125, 124, 124);
 
 .submit-button:hover {
     opacity: 0.75;
-    background-color:rgb(91, 89, 89);
+    background-color:var(--light-mode-dim);;
     color: white;
 }
 
@@ -239,7 +245,7 @@ start of JS styling
 
 .new-div-dark {
     border: 4px solid;
-    border-image-source: linear-gradient(to top left, #96031a 0%, transparent 45%);
+    border-image-source: linear-gradient(to top left, var(--dark-mode-red) 0%, transparent 45%);
     border-image-slice: 1;
     width: 19.4%;
     display: flex;
@@ -256,7 +262,7 @@ start of JS styling
     margin: 0 auto;
     margin-bottom: 3.9%;
     border-radius: 7%;
-    background-color: #96031a;
+    background-color: var(--dark-mode-red);
     color: white;
     border: none;
 }
@@ -341,7 +347,7 @@ start of footer styling
 }
 
 .footer a:hover {
-    background-color: rgb(91, 89, 89);
+    background-color: var(--light-mode-dim);
     color: white;
     opacity: 0.8;
 }
