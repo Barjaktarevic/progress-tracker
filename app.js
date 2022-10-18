@@ -82,7 +82,7 @@ document.body.addEventListener('click', function (element) {
 
 const loadButton = document.querySelector('.load-button')
 if (localStorage.getItem('data')) {
-loadButton.addEventListener('click', function() {
+document.addEventListener('DOMContentLoaded', function() {
   let parsedData = JSON.parse(window.localStorage.getItem('data'))
   for (let i = 0; i < parsedData.length; i++) {
     let newDiv = document.createElement('div')
@@ -98,8 +98,6 @@ loadButton.addEventListener('click', function() {
     divSection.appendChild(newDiv)
     newDivData.push(newDiv.innerHTML)
     newDiv.appendChild(newButton)
-    loadButton.setAttribute('disabled', '')
-    loadButton.innerText = "Progress loaded!"
   }
 })
 }
@@ -109,9 +107,7 @@ saveButton.addEventListener('click', function() {
   let saveText = saveButton.innerHTML
   stringifiedData = JSON.stringify(newDivData)
   window.localStorage.setItem('data', stringifiedData)
-  saveButton.innerText = "Saving..."
-  loadButton.setAttribute('disabled', '')
-  
+  saveButton.innerText = "Saving..."  
   setTimeout(() => {
     saveButton.innerHTML = saveText
   }, 2000)
@@ -128,8 +124,6 @@ lightButton.addEventListener('click', function() {
   navbar.style.borderBottom = 'white solid 3px'
   saveButton.style.backgroundColor = "white"
   saveButton.style.color = "var(--dark-mode-background)"
-  loadButton.style.backgroundColor = "white"
-  loadButton.style.color = "var(--dark-mode-background)"
   mainSection.style.backgroundColor = "var(--dark-mode-background)"
   mainSection.style.color = "white"
   addButton.style.boxShadow = "5px 10px 5px 0px var(--dark-mode-shadow)"
@@ -150,8 +144,6 @@ darkButton.addEventListener('click', function() {
   navbar.style.borderBottom = 'var(--light-mode-shadow) solid 3px'
   saveButton.style.backgroundColor = "var(--light-mode-dim)"
   saveButton.style.color = "white"
-  loadButton.style.backgroundColor = "var(--light-mode-dim)"
-  loadButton.style.color = "white"
   mainSection.style.backgroundColor = "var(--light-mode-background) "
   mainSection.style.color = "black"
   footer.style.borderImageSource = "linear-gradient(to right, transparent 0%, black 50%, transparent 100%)"

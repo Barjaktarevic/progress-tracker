@@ -74,7 +74,7 @@ html {
     margin-left: 1%;
 }
 
-.load-button, .save-button {
+.save-button {
     font-family: inherit;
     font-size: 0.845em;
     cursor: pointer;
@@ -85,10 +85,36 @@ html {
     color: white;
     padding: 0 10px;
     border-radius: 2px;
+    position: relative;
+    margin-right: 7.2%;
+    z-index: 1;
 }
 
-.save-button {
-    margin-right: 7.2%;
+.save-button::before {
+    position: absolute;
+    content: "";
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: black;
+    z-index: -1;
+
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: 300ms;
+
+}
+
+.save-button:hover::before {
+    transform: scaleX(1);
+    z-index: -1;
+}
+
+.save-button:hover {
+    z-index: 1;
+    color: white;
+    transition: color 300ms ease;
 }
 /* ===================================
  end of navbar styling
@@ -139,13 +165,13 @@ end of main styling
 start of modal styling
 ====================================== */
 .modal {
-position: absolute;
-left: 50%;
-top: 50%;
-transform: translate(-50%, -50%);
-width: 25%;
-border-radius: 2%;
-box-shadow: 0 8px 0 0px var(--light-mode-shadow);
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 25%;
+    border-radius: 2%;
+    box-shadow: 0 8px 0 0px var(--light-mode-shadow);
 }
 
 .dialog-form {
@@ -174,6 +200,7 @@ box-shadow: 0 8px 0 0px var(--light-mode-shadow);
     opacity: 0.75;
     background-color:var(--light-mode-dim);;
     color: white;
+    transition: 300ms ease-in-out;
 }
 
 .modal-title {
@@ -236,11 +263,28 @@ start of JS styling
     border-radius: 7%;
     background-color: white;
     border: none;
+    position: relative;
+}
+
+.new-div button::before {
+    content:'';
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 2px;
+    background-color: var(--light-mode-dim);
+    scale: 0;
+    transition: 300ms ease-in-out;
 }
 
 .new-div button:hover {
     cursor: pointer;
     opacity: 0.75;
+}
+
+.new-div button:hover::before {
+    scale: 1;
 }
 
 .new-div-dark {
@@ -265,11 +309,28 @@ start of JS styling
     background-color: var(--dark-mode-red);
     color: white;
     border: none;
+    position: relative;
+}
+
+.new-div-dark button::before {
+    content:'';
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 2px;
+    background-color: white;
+    scale: 0;
+    transition: 300ms ease-in-out;
 }
 
 .new-div-dark button:hover {
     cursor: pointer;
     opacity: 0.75;
+}
+
+.new-div-dark button:hover::before {
+    scale: 1;
 }
 
 @keyframes fade-in {
