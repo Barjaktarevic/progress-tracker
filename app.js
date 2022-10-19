@@ -122,8 +122,8 @@ lightButton.addEventListener('click', function() {
   navbar.style.backgroundColor = 'var(--dark-mode-background)'
   navbar.style.color = 'white'
   navbar.style.borderBottom = 'white solid 3px'
-  saveButton.style.backgroundColor = "white"
-  saveButton.style.color = "var(--dark-mode-background)"
+  saveButton.classList.remove('save-button')
+  saveButton.classList.add('save-button-dark')
   mainSection.style.backgroundColor = "var(--dark-mode-background)"
   mainSection.style.color = "white"
   addButton.style.boxShadow = "5px 10px 5px 0px var(--dark-mode-shadow)"
@@ -142,8 +142,8 @@ darkButton.addEventListener('click', function() {
   navbar.style.backgroundColor = 'white'
   navbar.style.color = 'var(--dark-mode-background)'
   navbar.style.borderBottom = 'var(--light-mode-shadow) solid 3px'
-  saveButton.style.backgroundColor = "var(--light-mode-dim)"
-  saveButton.style.color = "white"
+  saveButton.classList.remove('save-button-dark')
+  saveButton.classList.add('save-button')
   mainSection.style.backgroundColor = "var(--light-mode-background) "
   mainSection.style.color = "black"
   footer.style.borderImageSource = "linear-gradient(to right, transparent 0%, black 50%, transparent 100%)"

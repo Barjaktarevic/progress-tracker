@@ -116,6 +116,49 @@ html {
     color: white;
     transition: color 300ms ease;
 }
+
+.save-button-dark {
+    font-family: inherit;
+    font-size: 0.845em;
+    cursor: pointer;
+    border: none;
+    height: 75%;
+    margin-top: 0.52%;
+    background-color: white;
+    color: var(--dark-mode-background);
+    padding: 0 10px;
+    border-radius: 2px;
+    position: relative;
+    margin-right: 7.2%;
+    z-index: 1;
+}
+
+.save-button-dark::before {
+    position: absolute;
+    content: "";
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: black;
+    z-index: -1;
+
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: 300ms;
+
+}
+
+.save-button-dark:hover::before {
+    transform: scaleX(1);
+    z-index: -1;
+}
+
+.save-button-dark:hover {
+    z-index: 1;
+    color: white;
+    transition: color 300ms ease;
+}
 /* ===================================
  end of navbar styling
 ====================================== */
