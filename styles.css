@@ -28,6 +28,7 @@ html {
     line-height: 3em;
     height: 3em;
     border-bottom: grey solid 3px;
+    animation: navbar 300ms ease-in;
 }
 
 .light-button {
@@ -72,6 +73,7 @@ html {
     font-size: 1.75em;
     font-weight: bold;
     margin-left: 1%;
+
 }
 
 .save-button {
@@ -159,6 +161,21 @@ html {
     color: white;
     transition: color 300ms ease;
 }
+
+@keyframes navbar {
+    0% {
+        transform: translateY(-100%)
+    }
+
+    90% {
+        transform: translateY(20%)
+    }
+
+    100% {
+        transform: translateY(0%)
+    }
+}
+
 /* ===================================
  end of navbar styling
 ====================================== */
@@ -443,17 +460,54 @@ start of footer styling
     font-size: 1.5em;
     margin-left: 1.3em;
     margin-right: 1.3em;
+    animation: footer 300ms ease-in;
 }
 
 .footer a {
     color: black;
     text-decoration: none;
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+}
+
+.footer a::before {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    content: "";
+    scale: 1.5;
+    z-index: -1;
+    background-color: var(--light-mode-background);
+    border-radius: 50%;
+    transition: 300ms ease;
 }
 
 .footer a:hover {
     background-color: var(--light-mode-dim);
     color: white;
     opacity: 0.8;
+}
+
+.footer a:hover::before {
+    scale: 0
+
+}
+
+@keyframes footer {
+    0% {
+        transform: translateY(100%)
+    }
+
+    90% {
+        transform: translateY(-20%)
+    }
+
+    100% {
+        transform: translateY(0%)
+    }
 }
 
 /* ===================================
