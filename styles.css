@@ -469,6 +469,7 @@ start of footer styling
     position: relative;
     z-index: 1;
     overflow: hidden;
+    background-color: black;
 }
 
 .footer a::before {
@@ -480,7 +481,7 @@ start of footer styling
     content: "";
     scale: 1.5;
     z-index: -1;
-    background-color: var(--light-mode-background);
+    background-color: white;
     border-radius: 50%;
     transition: 300ms ease;
 }
@@ -512,4 +513,49 @@ start of footer styling
 
 /* ===================================
 end of footer styling
+====================================== */
+
+
+
+/* ===================================
+beginning of media queries
+====================================== */
+
+@media (max-width: 460px) {
+    .navbar {
+        font-size: 0.65rem;
+    }
+
+    .add-button {
+        font-size: 1.65rem;
+    }
+
+    .footer {
+        font-size: 1rem;
+    }
+
+    .dialog-form * {
+        font-size: 1rem;
+    }
+
+    .new-div {
+        width: 45%;
+    }
+
+    .new-div-dark {
+        width: 45%;
+    }
+
+    .main-section {
+        width: 90%;
+        margin: 0 auto;
+    }
+
+    .modal {
+        width: 65%;
+    }
+  }
+
+/* ===================================
+end of media queries
 ====================================== */
