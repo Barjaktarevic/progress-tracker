@@ -23,8 +23,8 @@ html {
 .navbar {
     display: flex;
     justify-content: space-between;
-    margin-left: 2em;
-    margin-right: 2em;
+    margin-left: 5%;
+    margin-right: 5%;
     line-height: 3em;
     height: 3em;
     border-bottom: grey solid 3px;
@@ -65,7 +65,8 @@ html {
     margin-right: 1%;
 }
 
-.light-button:hover, .dark-button:hover, .save-button:hover, .load-button:hover {
+.light-button:hover, .dark-button:hover, .save-button:hover, .load-button:hover,
+.light-button:focus, .dark-button:focus, .save-button:focus, .load-button:focus {
     opacity: 0.7;
 }
 
@@ -88,7 +89,7 @@ html {
     padding: 0 10px;
     border-radius: 2px;
     position: relative;
-    margin-right: 7.2%;
+    margin-right: 7.5%;
     z-index: 1;
 }
 
@@ -108,12 +109,12 @@ html {
 
 }
 
-.save-button:hover::before {
+.save-button:hover::before, .save-button:focus::before {
     transform: scaleX(1);
     z-index: -1;
 }
 
-.save-button:hover {
+.save-button:hover, .save-button:focus {
     z-index: 1;
     color: white;
     transition: color 300ms ease;
@@ -131,7 +132,7 @@ html {
     padding: 0 10px;
     border-radius: 2px;
     position: relative;
-    margin-right: 7.2%;
+    margin-right: 7.5%;
     z-index: 1;
 }
 
@@ -151,12 +152,12 @@ html {
 
 }
 
-.save-button-dark:hover::before {
+.save-button-dark:hover::before, .save-button-dark:focus::before {
     transform: scaleX(1);
     z-index: -1;
 }
 
-.save-button-dark:hover {
+.save-button-dark:hover, .save-button-dark:focus  {
     z-index: 1;
     color: white;
     transition: color 300ms ease;
@@ -201,7 +202,7 @@ start of main styling
     margin-right: 5%;
 }
 
-.add-button:hover {
+.add-button:hover, .add-button:focus {
     cursor: pointer;
     opacity: 0.7;
     background-color:white;
@@ -211,8 +212,8 @@ start of main styling
 .main-section {
     background-color: var(--light-mode-background);
     padding-top: 1%;
-    margin-left: 2em;
-    margin-right: 2em;
+    margin-left: 5%;
+    margin-right: 5%;
     min-height: 86.2vh;
 }
 /* ===================================
@@ -229,9 +230,10 @@ start of modal styling
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
-    width: 25%;
+    width: 35%;
     border-radius: 2%;
     box-shadow: 0 8px 0 0px var(--light-mode-shadow);
+    text-align: center;
 }
 
 .dialog-form {
@@ -243,7 +245,7 @@ start of modal styling
     margin: 0 auto;
     text-align: center;
     font-family: inherit;
-    font-size: 1.5em;
+    font-size: 1.65em;
     margin-top: 5%;
     width: 80%;
     border: none;
@@ -256,7 +258,7 @@ start of modal styling
     width: 40%;
 }
 
-.submit-button:hover {
+.submit-button:hover, .submit-button:focus {
     opacity: 0.75;
     background-color:var(--light-mode-dim);;
     color: white;
@@ -281,7 +283,7 @@ start of modal styling
     font-size: 1.5em;
 }
 
-.close-button:hover {
+.close-button:hover, close-button:focus {
     opacity: 0.75;
 }
 /* ===================================
@@ -338,12 +340,12 @@ start of JS styling
     transition: 300ms ease-in-out;
 }
 
-.new-div button:hover {
+.new-div button:hover, .new-div button:focus {
     cursor: pointer;
     opacity: 0.75;
 }
 
-.new-div button:hover::before {
+.new-div button:hover::before, .new-div button:focus::before  {
     scale: 1;
 }
 
@@ -384,12 +386,12 @@ start of JS styling
     transition: 300ms ease-in-out;
 }
 
-.new-div-dark button:hover {
+.new-div-dark button:hover, .new-div-dark button:focus {
     cursor: pointer;
     opacity: 0.75;
 }
 
-.new-div-dark button:hover::before {
+.new-div-dark button:hover::before, .new-div-dark button:focus::before {
     scale: 1;
 }
 
@@ -520,8 +522,21 @@ end of footer styling
 /* ===================================
 beginning of media queries
 ====================================== */
+@media (max-width: 800px) {
+    .modal {
+        width: 60%;
+    }
 
-@media (max-width: 460px) {
+    .save-button {
+        margin-right: 12%;
+    }
+
+    .save-button-dark {
+        margin-right: 12%;
+    }
+  }
+
+@media (max-width: 520px) {
     .navbar {
         font-size: 0.65rem;
     }
@@ -535,7 +550,7 @@ beginning of media queries
     }
 
     .dialog-form * {
-        font-size: 1rem;
+        font-size: 1.25rem;
     }
 
     .new-div {
@@ -549,12 +564,27 @@ beginning of media queries
     .main-section {
         width: 90%;
         margin: 0 auto;
+        min-height: 82vh;
     }
 
     .modal {
-        width: 65%;
+        width: 60%;
     }
+
+    .app-title {
+        font-size: 0.85rem;
+    }
+
+    .save-button {
+        margin-right: 3%;
+    }
+    
+    .save-button-dark {
+        margin-right: 3%;
+    }
+    
   }
+
 
 /* ===================================
 end of media queries
