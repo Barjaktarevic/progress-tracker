@@ -568,7 +568,7 @@ beginning of media queries
     }
 
     .modal {
-        width: 60%;
+        width: 65%;
     }
 
     .app-title {
@@ -578,7 +578,7 @@ beginning of media queries
     .save-button {
         margin-right: 3%;
     }
-    
+
     .save-button-dark {
         margin-right: 3%;
     }
